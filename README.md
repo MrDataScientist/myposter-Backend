@@ -59,4 +59,112 @@ sum(array(1, 2, 3));
 Beispielausgabe:
 > 6
 
-## III)
+## III) Schreibe eine Funktion, die die Datenstruktur nach folgenden Kriterien sortiert:
+- Die Bestellungen sollen aufsteigend (ASC) nach dem Datum (date) sortiert werden
+- Die Artikel innerhalb der Bestellungen sollen aufsteigend (ASC) nach dem Preis (price) sortiert werden
+
+Datenstruktur:
+$data = array(
+	'order-2' => array(
+		'date' => '19:22:56 2015-03-17',
+		'articles' => array(
+			array(
+				'id'    => '1',
+				'price' => 32.0
+			),
+			array(
+				'id'    => '2',
+				'price' => 20.0
+			)
+		)
+	),
+	'order-3' => array(
+		'date' => '22:56:17 2015-03-16',
+		'articles' => array(
+			array(
+				'id'    => '1',
+				'price' => 12.0
+			)
+		)
+	),
+	'order-1' => array(
+		'date' => '19:22:43 2015-03-17',
+		'articles' => array(
+			array(
+				'id'    => '3',
+				'price' => 15.0
+			),
+			array(
+				'id'    => '1',
+				'price' => 8.0
+			),
+			array(
+				'id'    => '2',
+				'price' => 21.0
+			)
+		)
+	)
+);
+
+Beispielaufruf:
+sortData($data);
+print_r($data);
+
+Beispielausgabe:
+> Array
+(
+	[order-3] => Array
+		(
+			[date] => 22:56:17 2015-03-16
+			[articles] => Array
+				(
+					[0] => Array
+						(
+							[id] => 1
+							[price] => 12
+						)
+				)
+		)
+	[order-1] => Array
+		(
+			[date] => 19:22:43 2015-03-17
+			[articles] => Array
+				(
+					[0] => Array
+						(
+							[id] => 1
+							[price] => 8
+						)
+					[1] => Array
+						(
+							[id] => 3
+							[price] => 15
+						)
+					[2] => Array
+						(
+							[id] => 2
+							[price] => 21
+						)
+				)
+		)
+	[order-2] => Array
+		(
+			[date] => 19:22:56 2015-03-17
+			[articles] => Array
+				(
+					[0] => Array
+						(
+							[id] => 2
+							[price] => 20
+						)
+					[1] => Array
+						(
+							[id] => 1
+							[price] => 32
+						)
+				)
+		)
+)
+
+
+## IV) 
