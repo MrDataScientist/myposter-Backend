@@ -181,10 +181,11 @@ drei
 ## IV) Schreibe eine Klasse, die zählt, wie oft eine Zahl gezählt wurde.
 
 Beispielaufruf:
-$counter = new Counter();
-$counter->count(1);
-$counter->count(1);
-$counter->count(3);
+
+	$counter = new Counter();
+	$counter->count(1);
+	$counter->count(1);
+	$counter->count(3);
 
 Beispielausgabe:
 $counter->getCounts();
