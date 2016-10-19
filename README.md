@@ -179,7 +179,7 @@ Beispielausgabe:
 drei
 ...
 
-## IV) Schreibe eine Klasse, die zählt, wie oft eine Zahl gezählt wurde.
+## V) Schreibe eine Klasse, die zählt, wie oft eine Zahl gezählt wurde.
 
 Beispielaufruf:
 
@@ -192,4 +192,114 @@ Beispielausgabe:
 $counter->getCounts();
 > 1: 2, 3: 1
 
-## V) 
+## VI) Erstelle EINEN SQL-Query für EINE Abfrage, welcher über die Tabelle 'Familien' eine Auswertung erstellt.
+
+Dabei sollen folgende Ausgaben geliefert werden:
+- Liste aller Einträge - pro Familien-Nachname eine Zeile, Nachname als erstes Sortierkriterium
+- Anzahl der Familienmitglieder pro Nachnamen als Column 'Mitglieder'
+- Vorname des männlichen Erziehungsberechtigten in Column 'Vater'
+- Alter des ältestes Familienmitglieds in Column 'maxAlter'
+- Vornamen der Kinder als Komma-getrennte Liste in der Spalte 'Kinder', dabei die Vornamen alphabetisch sortiert
+
+Daten:
+
+ID      Vorname     Nachname    Alter   Geschlecht  Erziehungsberechtigt
+
+1       Jochen      Meier       42      male        1
+2       Susanne     Meier       38      female      1
+3       Johannes    Meier       14      male        0
+4       Kia         Meier       10      female      0
+5       Sabine      Müller      33      female      1
+6       Klara       Müller      12      female      0
+7       Klaas       Ümser       3       male        0
+8       Gabi        Ümser       27      female      1
+9       Jochen      Ümser       26      male        1
+10      Dieter      Unger       72      male        1
+11      Gertrud     Unger       76      female      1
+12      Hans        Rößler      38      male        1
+13      Fritz       Waagner     18      male        0
+14      Susi        Waagner     44      female      1
+15      Max         Waagner     50      male        1
+16      Bambi       Waagner     13      female      0
+
+Zu erwartendes Ergebnis des SQL-Queries:
+
+Nachname    Mitglieder      Vater       maxAlter    Kinder
+--------------------------------------------------------------------------
+Meier       4               Jochen      42          Johannes, Kia
+Müller      2                           33          Klara
+Rößler      1               Hans        38
+Ümser       3               Jochen      27          Klaas
+Unger       2               Dieter      76
+Waagner     4               Max         50          Bambi, Fritz
+
+
+Als kleine Hilfe, hier die Insert-Statements:
+
+insert into Familien (`ID`, `Vorname`, `Nachname`, `Alter`, `Geschlecht`, `Erziehungsberechtigt`) values
+(1 ,'Jochen',    'Meier',    42 ,'male',     1),
+(2 ,'Susanne',   'Meier',    38 ,'female',   1),
+(3 ,'Johannes',  'Meier',    14 ,'male',     0),
+(4 ,'Kia',       'Meier',    10 ,'female',   0),
+(5 ,'Sabine',    'Müller',   33 ,'female',   1),
+(6 ,'Klara',     'Müller',   12 ,'female',   0),
+(7 ,'Klaas',     'Ümser',    3  ,'male',     0),
+(8 ,'Gabi',      'Ümser',    27 ,'female',   1),
+(9 ,'Jochen',    'Ümser',    26 ,'male',     1),
+(10,'Dieter',    'Unger',    72 ,'male',     1),
+(11,'Gertrud',   'Unger',    76 ,'female',   1),
+(12,'Hans',      'Rößler',   38 ,'male',     1),
+(13,'Fritz',     'Waagner',  18 ,'male',     0),
+(14,'Susi',      'Waagner',  44 ,'female',   1),
+(15,'Max',       'Waagner',  50 ,'male',     1),
+(16,'Bambi',     'Waagner',  13 ,'female',   0);
+
+## VII) Die Zustände von zwei Artikeln in der Produktion sollen verwaltet werden.
+
+Zwei Artikel sind vorgegeben:
+- Gerahmtes Poster
+- Bedruckte Glasplatte
+
+Beide Artikel können jeweils mit und ohne "Geschenkverpackung" bestellt werden.
+
+Die Produktion des "Gerahmten Posters" umfasst folgende Zustände:
+1. ordered
+2. printed
+3. sliced
+4. framed
+5. gift-wrapped (optional)
+6. shipped
+
+Die Produktion der "Bedruckten Glasplatte" umfasst folgende Zustände:
+1. ordered
+2. printed
+3. gift-wrapped (optional)
+4. shipped
+
+Wichtig ist, dass die korrekte Reihenfolge der Zustände sichergestellt wird.
+
+Die Artikel werden manuell von einem Schritt zum nächsten befördert, wodurch es vorkommen kann, dass ein Artikel einen falschen Zustand erhält.
+Hier wird erwartet, dass eine entsprechende Fehlermeldung mit dem erwarteten Zustand ausgegeben wird.
+Solche Fehler sind in der Datei run.php bereits vorgesehen.
+
+Anforderungen:
+- Für die Umsetzung soll kein Framework/Bibliothek verwendet werden.
+- Es ist keine Graphische Oberfläche nötig (Ein CLI Programm reicht aus).
+- Am Artikel soll nachvollziehbar sein, wann (genaue Zeit) welcher Zustand eingetreten ist.
+- Wenn ein nicht erwarteter Zustand bestätigt wird, soll eine Fehlermeldung ausgegeben werden.
+- Der Code soll erweiterbar sein, so das ein neuer Zustand zwischen bereits vorhandene Zustände einfach eingefügt werden kann.
+- Für die Umsetzung muss der bereitgestellte Quellcode als Basis verwendet werden. Dieser darf an beliebiger Stelle erweitert werden.
+- Die Datei run.php dient als Grundlage zum Testen.
+
+## VIII) Implementiere die Basis-Struktur für einen Logger. Der Logger soll dann in der Klasse "AsciiArray" genutzt werden.
+
+Anforderungen:
+- Der Logger soll verschiedene Prioritäten unterstützen
+- Eine Exception soll mit mehr Informationen geloggt werden, als die normalen Log-Einträge (siehe Klasse "AsciiArray")
+- Für jeden Log-Eintrag soll zusätzlich die aktuelle Uhrzeit und Priorität mitgespeichert werden.
+- Der Logger soll mindestens zwei verschiedene Speicherarten unterstützen, z.B. Datenbank und Filesystem.
+- Der Logger soll zur Laufzeit nur eine der beiden Speicherarten verwenden
+- Das Abspeichern selbst muss nicht implementiert werden (Testen ob Datenbank/Datei existiert usw.).
+- Die Funktionalität des Loggers soll durch PHPUnit Tests abgedeckt sein. Die Speicherarten müssen nicht getestet
+  werden, da deren Implementierung nicht notwendig ist.
+- Die Grundprinzipien von OOP sollen eingehalten werden.
