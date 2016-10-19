@@ -167,4 +167,15 @@ Beispielausgabe:
 )
 
 
-## IV) 
+## IV) Schreibe eine Funktion, die die Zahlen von 1 bis 100 ausgibt. Für Vielfache von 3 soll stattdessen "drei" und für Vielfache von 5 "fünf" ausgegeben werden. Für Vielfache von 3 und 5 soll "beide" ausgegeben werden.
+
+Beispielaufruf:
+multiple();
+
+Beispielausgabe:
+> 1
+2
+drei
+...
+
+## IV) test
