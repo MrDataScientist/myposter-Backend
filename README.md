@@ -50,3 +50,13 @@ Beispielausgabe:
 > Name: Einsteinstr., Hausnummer: 7
 Name: Einsteinstrasse, Hausnummer: 7
 Name: Curd-Jürgens-Str., Hausnummer: 30
+
+## II)Schreibe eine Funktion, die ein Array mit Zahlen als Parameter nimmt, alle Zahlen summiert und ausgibt. Die Funktion muss rekursiv sein und darf keine Schleifen (for, foreach) verwenden.
+
+Beispielaufruf:
+sum(array(1, 2, 3));
+
+Beispielausgabe:
+> 6
+
+## III)
