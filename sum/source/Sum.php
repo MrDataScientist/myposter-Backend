@@ -13,3 +13,4 @@ class Sum
         return count($numbers) ? array_pop($numbers) + array_sum($numbers) : 0;
     }
 }
+?>
