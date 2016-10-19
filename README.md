@@ -64,7 +64,8 @@ Beispielausgabe:
 - Die Artikel innerhalb der Bestellungen sollen aufsteigend (ASC) nach dem Preis (price) sortiert werden
 
 Datenstruktur:
-$data = array(
+
+	$data = array(
 	'order-2' => array(
 		'date' => '19:22:56 2015-03-17',
 		'articles' => array(
