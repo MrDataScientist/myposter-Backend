@@ -3,7 +3,7 @@
 * @autor : Tarik En Nakdi
 */
 <?php
-namespace login\Test;
+namespace login\source;
 
   session_start();
 
@@ -39,14 +39,10 @@ if (isset($_POST['name']) && isset($_POST['password'])) {
 ?><!DOCTYPE html>
 <html>
 <head>
-    <title>PHP</title>
+    <title> User login: </title>
 </head>
 <body>
-<?php
-readfile('navigation.html');
 
-echo "<p>$message</p>";
-?>
 <form method="post" action="">
     User name <input type="text" name="name"><br>
     Password <input type="password" name="password"><br>
