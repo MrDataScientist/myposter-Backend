@@ -3,6 +3,8 @@
 * @autor : Tarik En Nakdi
 */
 <?php
+namespace login\Test;
+
   session_start();
 
 $message = '';
